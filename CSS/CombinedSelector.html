@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .grandParent > p {
+        color: red;
+      }
+
+      .child > p + p {
+        color: blue;
+      } */
+
+      .parent > p {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grandParent">
+      <p>I am p1 Tag</p>
+      <div class="parent">
+        <p>I am p2 tag</p>
+        <div class="child">
+          <p>I am p3 tag</p>
+          <p>I am p4 tag</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
