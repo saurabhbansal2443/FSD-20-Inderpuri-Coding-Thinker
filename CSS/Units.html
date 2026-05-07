@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      /* 
+        Relative Units 
+        1) vw and vh --> Screen size 
+        2) % ---> direct parent
+        3) em -->  Direct parent
+        4) rem -->  Root Element (HTML)
+         */
+      .parent {
+        border: 1px solid red;
+        /* height: 500px;
+        width: 500px; */
+        height: 50vh;
+        width: 50vw;
+        font-size: 2rem;
+      }
+      .child {
+        border: 1px solid blue;
+        height: 50%;
+        width: 50%;
+         font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      Parent
+      <div class="child">child</div>
+    </div>
+  </body>
+</html>
