@@ -13,8 +13,20 @@
         color: blue;
       } */
 
-      .parent > p {
+      /* .parent > p {
         color: green;
+      } */
+
+      /* .parent > p {
+        color: blue;
+      }
+
+      .child > p + p + p {
+        color: red;
+      } */
+
+      p + p ~ p {
+        color: red;
       }
     </style>
   </head>
@@ -23,9 +35,11 @@
       <p>I am p1 Tag</p>
       <div class="parent">
         <p>I am p2 tag</p>
+        <p>I am p9 tag</p>
         <div class="child">
           <p>I am p3 tag</p>
           <p>I am p4 tag</p>
+          <p>I am p5 tag</p>
         </div>
       </div>
     </div>
