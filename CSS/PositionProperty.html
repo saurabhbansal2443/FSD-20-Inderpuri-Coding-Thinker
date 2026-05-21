@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* Static , relative , absolute , fixed , sticky  */
+      .parent {
+        height: 500px;
+        width: 500px;
+        border: 1px solid red;
+        position: relative;
+      }
+      .child {
+        height: 100px;
+        width: 100px;
+      }
+      .red {
+        background-color: red;
+      }
+      .blue {
+        background-color: blue;
+        /* position: relative;
+        left: 100px;
+        top: 100px; */
+      }
+      .green {
+        background-color: green;
+        /* position: absolute;
+        left: 100px;
+        top: 100px;
+        right: 100px;
+        opacity: 0.5; */
+      }
+      .black {
+        background-color: black;
+        /* position: fixed;
+        right: 100px;
+        bottom: 100px; */
+      }
+      .orange {
+        background-color: rgb(255, 187, 61);
+        position: sticky;
+        left: 100px;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <!-- 
+  1) Relative -- Donot leave space , Takes position according to originla position
+  2) absolute - Leaves the space ,  Instially position according to screen,but we can change the parent by giving Position as relative to its parent
+  3) fixed - Leaves the space, take position according to screen   
+  4) Sticky - Donot leave space , takes position according to parent 
+   -->
+  <body>
+    <div class="parent">
+      <div class="child red"></div>
+      <div class="child blue"></div>
+      <div class="child orange"></div>
+      <div class="child green"></div>
+      <div class="child black"></div>
+    </div>
+    <div style="height: 300vh"></div>
+  </body>
+</html>
