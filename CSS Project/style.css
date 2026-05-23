@@ -20,14 +20,17 @@ p {
   border-bottom: 3px solid #d8444d;
 }
 
+.boxShadow {
+  -webkit-box-shadow: -2px 20px 12px -2px rgba(198, 198, 198, 0.66);
+  box-shadow: -2px 20px 12px -2px rgba(198, 198, 198, 0.66);
+}
+
 .navbar {
   height: 8vh;
   width: 100vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  -webkit-box-shadow: -2px 20px 12px -2px rgba(198, 198, 198, 0.66);
-  box-shadow: -2px 20px 12px -2px rgba(198, 198, 198, 0.66);
 }
 .routes {
   height: 90%;
@@ -68,4 +71,49 @@ p {
 
 .pathsContainer:hover {
   background-color: rgb(221, 236, 252);
+}
+.searchBuses {
+  background-image: url("https://s3.rdbuz.com/Images/responsiveweb/HomeBanner.webp");
+  height: 30vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  position: relative;
+}
+.heading {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  color: white;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.searchBusContainer {
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: -25%;
+  left: 15%;
+  height: 50%;
+  width: 70%;
+  background-color: white;
+  border-radius: 20px;
+}
+.SearchBusesButton {
+  position: absolute;
+  bottom: -30%;
+  left: 42.5%;
+  height: 15%;
+  width: 15%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 4%;
+  padding-right: 4%;
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: #d8444d;
+  color: white;
 }
