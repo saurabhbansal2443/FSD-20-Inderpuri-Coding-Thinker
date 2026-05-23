@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  color: #1d1d1d;
+}
+
+.border {
+  border: 1px solid red;
+}
+
+.red {
+  color: #d8444d;
+}
+
+.borderSelected {
+  border-bottom: 3px solid #d8444d;
+}
+
+.navbar {
+  height: 8vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  -webkit-box-shadow: -2px 20px 12px -2px rgba(198, 198, 198, 0.66);
+  box-shadow: -2px 20px 12px -2px rgba(198, 198, 198, 0.66);
+}
+.routes {
+  height: 90%;
+  width: 22%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.paths {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.routeOption {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.routeOptionText {
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+.pathsContainer {
+  width: 28%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.pathsContainer:hover {
+  background-color: rgb(221, 236, 252);
+}
