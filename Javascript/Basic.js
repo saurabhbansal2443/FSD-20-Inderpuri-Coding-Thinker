@@ -1,6 +1,6 @@
 // Print Statements
 
-console.log("Hello World");
+// console.log("Hello World");
 
 // Data Types
 // Primitive / non-primitive(Objects)
@@ -25,26 +25,30 @@ console.log("Hello World");
 // Null signifies absence of value intentionally
 // undefine absence of value
 
-let x = null;
+// let x = null;
 
-console.log(x);
+// console.log(x);
 
 //  Non primitive data type
 
 // object
 
-let obj = {
-  name: "saurabh",
-  age: 25,
-  hobbies: ["Driving", "Reading", "coding"],
-  adrress: {
-    city: "Bhopal",
-    state: "MP",
-    pincode: 1234567890,
-  },
-  isStudent: false,
-};
-console.log(obj['isStudent']);
+// let obj = {
+//   name: "saurabh",
+//   age: 25,
+//   hobbies: ["Driving", "Reading", "coding"],
+//   adrress: {
+//     city: "Bhopal",
+//     state: "MP",
+//     pincode: 1234567890,
+//   },
+//   isStudent: false,
+// };
+// console.log(obj['isStudent']);
 
-let arr = ["saurabh" , 1 , true , {name : "Yash"} , [1,2,3]]
-console.log(arr[3].name)
+// let arr = ["saurabh" , 1 , true , {name : "Yash"} , [1,2,3]]
+// console.log(arr[3].name)
+
+
+// Operators  
+
