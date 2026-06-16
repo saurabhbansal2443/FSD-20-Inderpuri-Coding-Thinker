@@ -34,21 +34,60 @@
 // console.log(a); // error
 // let a ;
 // console.log(a); // 10
-one();
-console.log(a);
-var a = 10;
-var b = 100;
-console.log(a);
-one();
 
-function one() {
-  console.log(a);
-  var a = 100;
-  console.log(a);
-  console.log(b);
-  function two() {
-    var b = 99;
-    console.log(b);
-  }
-  two();
+// one();
+// console.log(a);
+// var a = 10;
+// var b = 100;
+// console.log(a);
+// one();
+
+// function one() {
+//   console.log(a);
+//   var a = 100;
+//   console.log(a);
+//   console.log(b);
+//   function two() {
+//     var b = 99;
+//     console.log(b);
+//   }
+//   two();
+// }
+
+// one();
+// console.log(a);
+// var a = 10;
+// console.log(b);
+// var b = 100;
+// console.log(a);
+// one();
+
+// function one() {
+//   console.log(a);
+//   var a = 100;
+//   console.log(a);
+//   b = 100;
+//   console.log(b);
+//   function two() {
+//     var b = 99;
+//     console.log(b);
+//   }
+//   two();
+// }
+
+
+// Scope -- 
+//  Function scope -- The variable which can be used in a function only is called function scope 
+
+//  Var is function scope and let and const are block {} scope 
+
+// var let and const are function scope because function is also a block of code 
+
+
+function abc(){
+  let a = 10 ; 
+  console.log(a); 
 }
+
+abc(); 
+console.log(a); 
