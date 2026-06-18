@@ -75,21 +75,61 @@
 //   two();
 // }
 
+// Scope --
+//  Function scope -- The variable which can be used in a function only is called function scope
 
-// Scope -- 
-//  Function scope -- The variable which can be used in a function only is called function scope 
+//  Var is function scope and let and const are block {} scope
 
-//  Var is function scope and let and const are block {} scope 
+// var let and const are function scope because function is also a block of code
 
-// var let and const are function scope because function is also a block of code 
+//  Block Scope -- Global Scope -- Scope chaining -- Lexical Scope -- let and const
 
-//  Block Scope -- Global Scope -- Scope chaining -- Lexical Scope -- let and const 
+// function abc() {
+//   var a = 10;
+//   console.log(a);
+// }
 
+// abc();
+// console.log(a);
 
-function abc(){
-  let a = 10 ; 
-  console.log(a); 
+// console.log(a);
+// let a ;
+// console.log(a);
+
+// Block Scope
+
+// {
+//   var b = 99;
+//   let a = 10;
+//   console.log(a);
+// }
+// console.log(b);
+// // console.log(a);
+
+console.log(a);
+var a = 10;
+let b = 99;
+
+function one() {
+  console.log(x);
+  console.log(a);
+  let c = 99;
+  console.log(c);
+  var x = 55;
+  console.log(x);
+
+  function two() {
+    console.log(x);
+    var a = 199;
+    console.log(a);
+
+    function three() {
+      console.log(b);
+      console.log(a);
+      console.log(x);
+    }
+    three()
+  }
+  two();
 }
-
-abc(); 
-console.log(a); 
+one();
