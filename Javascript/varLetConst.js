@@ -83,6 +83,8 @@
 
 // var let and const are function scope because function is also a block of code 
 
+//  Block Scope -- Global Scope -- Scope chaining -- Lexical Scope -- let and const 
+
 
 function abc(){
   let a = 10 ; 
