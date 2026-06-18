@@ -7,4 +7,4 @@
 
 [Flexbox Froggy](https://flexboxfroggy.com/)
 
-[Feedback form](https://forms.gle/fxXF7eeZngmLMMmy9)
+[Feedback form](https://forms.gle/6NTz6QbB3PtNdttB8)
