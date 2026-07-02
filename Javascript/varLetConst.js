@@ -106,30 +106,37 @@
 // console.log(b);
 // // console.log(a);
 
-console.log(a);
-var a = 10;
-let b = 99;
+// console.log(a);
+// var a = 10;
+// let b = 99;
 
-function one() {
-  console.log(x);
-  console.log(a);
-  let c = 99;
-  console.log(c);
-  var x = 55;
-  console.log(x);
+// function one() {
+//   console.log(x);
+//   console.log(a);
+//   let c = 99;
+//   console.log(c);
+//   var x = 55;
+//   console.log(x);
 
-  function two() {
-    console.log(x);
-    var a = 199;
-    console.log(a);
+//   function two() {
+//     console.log(x);
+//     var a = 199;
+//     console.log(a);
 
-    function three() {
-      console.log(b);
-      console.log(a);
-      console.log(x);
-    }
-    three()
-  }
-  two();
-}
-one();
+//     function three() {
+//       console.log(b);
+//       console.log(a);
+//       console.log(x);
+//     }
+//     three()
+//   }
+//   two();
+// }
+// one();
+
+
+// Global Scope -- Anything which is out of function or a block 
+
+
+var a = 10 ; 
+
