@@ -92,15 +92,51 @@ let arr = [1, 2, 3, 4, 5];
 
 // Question 5
 
-const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+// const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
 
-const ans = fruits.reduce(function (acc, currEle) {
-  if (acc[currEle]) {
-    acc[currEle] = acc[currEle] + 1;
+// const ans = fruits.reduce(function (acc, currEle) {
+//   if (acc[currEle]) {
+//     acc[currEle] = acc[currEle] + 1;
+//   } else {
+//     acc[currEle] = 1;
+//   }
+//   return acc;
+// }, {});
+
+// console.log(ans);
+
+// Question 6
+
+const students = [
+  {
+    name: "ajay",
+    grade: "A",
+  },
+  {
+    name: "Bhim",
+    grade: "B",
+  },
+  {
+    name: "Ram",
+    grade: "C",
+  },
+  {
+    name: "Shyam",
+    grade: "A",
+  },
+];
+
+// {
+// A:[ajay , shyam]
+// }
+
+const ans = students.reduce(function (acc, currObj) {
+  if (acc[currObj.grade]) {
+    acc[currObj.grade].push(currObj.name);
   } else {
-    acc[currEle] = 1;
+    acc[currObj.grade] = [currObj.name];
   }
   return acc;
 }, {});
 
-console.log(ans)
+console.log(ans);
