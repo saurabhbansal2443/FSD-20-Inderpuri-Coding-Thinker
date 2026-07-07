@@ -18,17 +18,19 @@ function counter() {
     enter1: enter,
     exit1: exit,
   };
-  return obj ; 
+  return obj;
 }
 
-let obj = counter();
+let { enter1, exit1 } = counter();
 
-obj.enter1();
-obj.enter1();
-obj.exit1();
-obj.enter1();
-obj.enter1();
-obj.exit1();
+// let obj = counter();
+
+enter1();
+enter1();
+exit1();
+enter1();
+enter1();
+exit1();
 count = 45;
-obj.enter1();
-obj.enter1();
+enter1();
+enter1();
