@@ -16,7 +16,18 @@
     // console.dir(h1tag);
 
     const imageTag = document.querySelector("img");
-    imageTag.src = "./image2.jpeg";
-    console.dir(imageTag);
+    // imageTag.src = "./image2.jpeg";
+    // console.dir(imageTag);
+    let flag = true;
+    function changeImage() {
+      if (flag) {
+        imageTag.src = "./image2.jpeg";
+      } else {
+        imageTag.src = "./image1.jpeg";
+      }
+      flag = !flag;
+    }
+
+    imageTag.addEventListener("click", changeImage);
   </script>
 </html>
