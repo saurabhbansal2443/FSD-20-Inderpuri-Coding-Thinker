@@ -10,6 +10,9 @@
         width: 100px;
         background-color: lightblue;
         margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .circle {
         height: 100px;
@@ -17,6 +20,15 @@
         background-color: lightblue;
         margin: 10px;
         border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .square:hover {
+        transform: scale(1.2);
+      }
+      .circle:hover {
+        transform: scale(1.2);
       }
     </style>
   </head>
@@ -47,8 +59,14 @@
       const shape = shapeInput.value;
       const bgColor = colorInput.value;
 
+      if (boxQuantity > 100) {
+        alert("The Qunatity of boxex could not exceed than 100 ");
+        return;
+      }
+
       for (let i = 1; i <= boxQuantity; i++) {
         const boxEle = document.createElement("div");
+        boxEle.innerText = i;
         boxEle.classList.add(shape);
         boxEle.style.backgroundColor = bgColor;
         boxContainer.appendChild(boxEle);
