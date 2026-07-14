@@ -52,6 +52,8 @@
     const shapeInput = document.getElementById("shape");
     const colorInput = document.getElementById("color");
 
+    // const colors = ["red", "blue", "green"];
+
     button.addEventListener("click", function () {
       const boxQuantity = inputTag.valueAsNumber;
       //   console.log("boxQuantity", boxQuantity);
@@ -66,9 +68,15 @@
 
       for (let i = 1; i <= boxQuantity; i++) {
         const boxEle = document.createElement("div");
+        // const bgColor = colors[Math.floor(Math.random() * colors.length - 1)];
         boxEle.innerText = i;
         boxEle.classList.add(shape);
         boxEle.style.backgroundColor = bgColor;
+
+        boxEle.addEventListener("dblclick", function () {
+          //  console.log(i, "th box clicked");
+          boxContainer.removeChild(boxEle);
+        });
         boxContainer.appendChild(boxEle);
       }
       //   console.log(boxEle);
