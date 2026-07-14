@@ -8,13 +8,13 @@
       .square {
         height: 100px;
         width: 100px;
-        border: 5px solid red;
+        background-color: lightblue;
         margin: 10px;
       }
       .circle {
         height: 100px;
         width: 100px;
-        border: 5px solid red;
+        background-color: lightblue;
         margin: 10px;
         border-radius: 50%;
       }
@@ -23,12 +23,11 @@
   <body>
     <input id="input" type="number" />
     <button id="btn">Add</button>
-
     <select name="" id="shape">
       <option value="square">Square</option>
       <option value="circle">Circle</option>
     </select>
-
+    <input id="color" type="color" />
     <div class="container">
       <!-- <div class="square"></div>
       <div class="circle"></div> -->
@@ -39,16 +38,19 @@
     const button = document.getElementById("btn");
     const boxContainer = document.querySelector(".container");
     const shapeInput = document.getElementById("shape");
+    const colorInput = document.getElementById("color");
 
     button.addEventListener("click", function () {
       const boxQuantity = inputTag.valueAsNumber;
       //   console.log("boxQuantity", boxQuantity);
       boxContainer.innerHTML = "";
       const shape = shapeInput.value;
+      const bgColor = colorInput.value;
 
       for (let i = 1; i <= boxQuantity; i++) {
         const boxEle = document.createElement("div");
         boxEle.classList.add(shape);
+        boxEle.style.backgroundColor = bgColor;
         boxContainer.appendChild(boxEle);
       }
       //   console.log(boxEle);
