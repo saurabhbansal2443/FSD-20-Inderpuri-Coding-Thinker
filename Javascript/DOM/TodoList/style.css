@@ -38,8 +38,9 @@
   width: 100vw;
   background-color: #ffb6a6;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 .task {
   margin-top: 15px;
