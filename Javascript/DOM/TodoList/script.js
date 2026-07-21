@@ -30,6 +30,7 @@ buttonTag.addEventListener("click", function () {
   const deleteButton = taskBox.querySelector("#delete");
 
   deleteButton.addEventListener("click", function () {
+    // console.log("Delete");
     containerList.removeChild(taskBox);
   });
 
