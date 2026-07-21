@@ -4,6 +4,11 @@ const containerList = document.querySelector(".containerList");
 
 buttonTag.addEventListener("click", function () {
   const task = inputTag.value;
+  if (task.trim().length == 0) {
+    alert("Task cannot be empty");
+    return;
+  }
+  inputTag.value = "";
   //   console.log(task);
   const taskBox = document.createElement("div");
   taskBox.classList.add("task");
@@ -22,5 +27,5 @@ buttonTag.addEventListener("click", function () {
         </svg>`;
 
   containerList.appendChild(taskBox);
-  console.log(taskBox);
+  // console.log(taskBox);
 });
