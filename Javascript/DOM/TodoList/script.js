@@ -2,7 +2,7 @@ const inputTag = document.getElementById("input");
 const buttonTag = document.getElementById("btn");
 const containerList = document.querySelector(".containerList");
 
-buttonTag.addEventListener("click", function () {
+function createTicketAndAddToUI() {
   const task = inputTag.value;
   if (task.trim().length == 0) {
     alert("Task cannot be empty");
@@ -36,4 +36,13 @@ buttonTag.addEventListener("click", function () {
 
   containerList.appendChild(taskBox);
   // console.log(taskBox);
+}
+
+buttonTag.addEventListener("click", createTicketAndAddToUI);
+
+inputTag.addEventListener("keydown", function (event) {
+  const key = event.key;
+  if (key == "Enter") {
+    createTicketAndAddToUI();
+  }
 });
