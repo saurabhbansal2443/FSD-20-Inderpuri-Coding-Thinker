@@ -1,6 +1,11 @@
 const inputTag = document.getElementById("input");
 const buttonTag = document.getElementById("btn");
 const containerList = document.querySelector(".containerList");
+const deleteAllBtn = document.getElementById("deleteBtn");
+
+deleteAllBtn.addEventListener("click", function () {
+  containerList.innerHTML = "";
+});
 
 function createTicketAndAddToUI() {
   const task = inputTag.value;

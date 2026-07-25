@@ -33,6 +33,19 @@
   color: white;
   font-weight: 700;
 }
+#deleteBtn {
+  height: 50%;
+  width: 10%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  padding: 2px 4px 2px 4px;
+  background-color: #ff5d5d;
+  margin-left: 10px;
+  color: white;
+  font-weight: 700;
+}
 .containerList {
   height: 90vh;
   width: 100vw;
