@@ -39,7 +39,7 @@ function createTicketAndAddToUI() {
   const editButton = taskBox.querySelector("#edit");
   const pTag = taskBox.querySelector("p");
   let editFlag = false;
-  editButton.addEventListener("click", function () {
+  function editTask() {
     if (editFlag == false) {
       editButton.setAttribute("fill", "red");
       pTag.setAttribute("contentEditable", "true");
@@ -51,7 +51,10 @@ function createTicketAndAddToUI() {
       pTag.style.textDecoration = "none";
     }
     editFlag = !editFlag;
-  });
+  }
+
+  pTag.addEventListener("dblclick", editTask);
+  editButton.addEventListener("click", editTask);
 
   deleteButton.addEventListener("click", function () {
     // console.log("Delete");
