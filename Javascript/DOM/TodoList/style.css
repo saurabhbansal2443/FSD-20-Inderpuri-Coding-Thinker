@@ -70,4 +70,5 @@
   align-items: center;
 }
 .task > p {
+  outline: none;
 }
