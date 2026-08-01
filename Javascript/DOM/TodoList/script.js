@@ -39,6 +39,7 @@ function createTicketAndAddToUI() {
   const editButton = taskBox.querySelector("#edit");
   const pTag = taskBox.querySelector("p");
   let editFlag = false;
+  let oldTaskText = pTag.innerText;
   function editTask() {
     if (editFlag == false) {
       editButton.setAttribute("fill", "red");
@@ -49,6 +50,12 @@ function createTicketAndAddToUI() {
       editButton.setAttribute("fill", "black");
       pTag.setAttribute("contentEditable", "false");
       pTag.style.textDecoration = "none";
+      console.log(oldTaskText, pTag.innerText);
+      if (pTag.innerText.trim().length == 0) {
+        pTag.innerText = oldTaskText;
+      } else {
+        oldTaskText = pTag.innerText;
+      }
     }
     editFlag = !editFlag;
   }
