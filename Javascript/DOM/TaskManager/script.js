@@ -1,6 +1,9 @@
 const addButton = document.getElementById("add");
 const taskAdderContainer = document.querySelector(".taskAdder");
 const taskTextArea = document.querySelector(".taskText");
+const taskAdderColorContainer = document.querySelector(".priotityColors2");
+
+let selectedColor = "red";
 
 // add task button functionality
 addButton.addEventListener("click", function () {
@@ -18,4 +21,20 @@ taskTextArea.addEventListener("keydown", function (event) {
 
   const taskText = taskTextArea.value;
   console.log(taskText);
+});
+
+// Adding EventDelegation to task adder color container to attach event listner to color container
+
+taskAdderColorContainer.addEventListener("click", function (event) {
+  const targetElement = event.target;
+
+  if (targetElement.classList[0] === "priotityColors2") {
+    return;
+  }
+
+  // selecting the color 
+
+  selectedColor = targetElement.classList[1]; 
+
+  console.log(selectedColor);
 });
