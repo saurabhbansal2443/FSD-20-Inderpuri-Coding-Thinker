@@ -2,6 +2,9 @@ const addButton = document.getElementById("add");
 const taskAdderContainer = document.querySelector(".taskAdder");
 const taskTextArea = document.querySelector(".taskText");
 const taskAdderColorContainer = document.querySelector(".priotityColors2");
+const taskAdderColors = document.querySelectorAll(".color2");
+
+console.log(taskAdderColors);
 
 let selectedColor = "red";
 
@@ -32,9 +35,15 @@ taskAdderColorContainer.addEventListener("click", function (event) {
     return;
   }
 
-  // selecting the color 
+  // selecting the color
 
-  selectedColor = targetElement.classList[1]; 
+  selectedColor = targetElement.classList[1];
+
+  taskAdderColors.forEach(function (colorEle) {
+    colorEle.classList.remove("border");
+  });
+
+  targetElement.classList.add("border");
 
   console.log(selectedColor);
 });
