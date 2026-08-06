@@ -10,6 +10,8 @@ let selectedColor = "red";
 let isDeleteActive = false;
 let taskArray = []; // --> {task :"hello" , color :"red" , id : ""}
 
+let colorsArray = ["red", "blue", "green", "orange"];
+
 function hideTaskAdder() {
   taskAdderContainer.classList.toggle("hide");
 }
@@ -90,6 +92,22 @@ function createTaskAndAddToUI(ticketTaskArray = taskArray) {
             </svg>
           </div>
         </div>`;
+
+    const ticketPriorityColor = ticketBox.querySelector(".taskColor");
+    // color changing strip fuctionality
+    ticketPriorityColor.addEventListener("click", function () {
+      const currentColor = ticketPriorityColor.classList[1];
+      const currentColorIndex = colorsArray.indexOf(currentColor);
+      const nextColor =
+        colorsArray[(currentColorIndex + 1) % colorsArray.length];
+      // UI Layer --
+      ticketPriorityColor.classList.remove(currentColor);
+      ticketPriorityColor.classList.add(nextColor);
+      // Data Layer
+      taskObj.color = nextColor;
+
+      // console.log(currentColor);
+    });
 
     // delete functionality of ticket when delete flag is active
     ticketBox.addEventListener("dblclick", function () {
