@@ -32,7 +32,7 @@ taskTextArea.addEventListener("keydown", function (event) {
   taskArray.push(taskObj);
   hideTaskAdder();
   taskTextArea.value = "";
-  createTaskAndAddToUI(taskArray);
+  createTaskAndAddToUI();
 });
 // Get the color from taskAdder
 // Adding EventDelegation to task adder color container to attach event listner to color container
@@ -67,9 +67,9 @@ deleteButton.addEventListener("click", function () {
 });
 
 // Create Task And task TO UI
-function createTaskAndAddToUI(taskArray) {
+function createTaskAndAddToUI(ticketTaskArray = taskArray) {
   taskContainer.innerHTML = "";
-  taskArray.forEach(function (taskObj) {
+  ticketTaskArray.forEach(function (taskObj) {
     const { task, color, id } = taskObj;
     const ticketBox = document.createElement("div");
     ticketBox.classList.add("ticket");
@@ -94,7 +94,12 @@ function createTaskAndAddToUI(taskArray) {
     // delete functionality of ticket when delete flag is active
     ticketBox.addEventListener("dblclick", function () {
       if (!isDeleteActive) return;
+      //UI Layer --> deleted the task from UI
       taskContainer.removeChild(ticketBox);
+      // Data Layer --> delete Task from task array
+      taskArray = taskArray.filter(function (obj) {
+        return obj.id != id;
+      });
     });
     taskContainer.appendChild(ticketBox);
   });
