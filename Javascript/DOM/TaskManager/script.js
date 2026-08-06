@@ -4,8 +4,10 @@ const taskTextArea = document.querySelector(".taskText");
 const taskAdderColorContainer = document.querySelector(".priotityColors2");
 const taskAdderColors = document.querySelectorAll(".color2");
 const taskContainer = document.querySelector(".taskContainer");
+const deleteButton = document.getElementById("delete");
 
 let selectedColor = "red";
+let isDeleteActive = false;
 let taskArray = []; // --> {task :"hello" , color :"red" , id : ""}
 
 function hideTaskAdder() {
@@ -52,9 +54,21 @@ taskAdderColorContainer.addEventListener("click", function (event) {
   targetElement.classList.add("border");
 });
 
-// Create Task And task TO UI
+// delete button Functionailty (changing the color of delete button and toggle the flag of delete)
+deleteButton.addEventListener("click", function () {
+  if (isDeleteActive) {
+    // black
+    deleteButton.setAttribute("fill", "black");
+  } else {
+    //red
+    deleteButton.setAttribute("fill", "red");
+  }
+  isDeleteActive = !isDeleteActive;
+});
 
+// Create Task And task TO UI
 function createTaskAndAddToUI(taskArray) {
+  taskContainer.innerHTML = "";
   taskArray.forEach(function (taskObj) {
     const { task, color, id } = taskObj;
     const ticketBox = document.createElement("div");
@@ -76,6 +90,12 @@ function createTaskAndAddToUI(taskArray) {
             </svg>
           </div>
         </div>`;
+
+    // delete functionality of ticket when delete flag is active
+    ticketBox.addEventListener("dblclick", function () {
+      if (!isDeleteActive) return;
+      taskContainer.removeChild(ticketBox);
+    });
     taskContainer.appendChild(ticketBox);
   });
 }
