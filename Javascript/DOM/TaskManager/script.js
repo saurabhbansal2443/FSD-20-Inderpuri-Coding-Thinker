@@ -17,6 +17,14 @@ let selectedColor = "red";
 let isDeleteActive = false;
 let taskArray = []; // --> {task :"hello" , color :"red" , id : ""}
 
+let localStorageTaskData = localStorage.getItem("TaskArray");
+
+if (localStorageTaskData) {
+  let parsedData = JSON.parse(localStorageTaskData);
+  taskArray = parsedData;
+  createTaskAndAddToUI();
+}
+
 let colorsArray = ["red", "blue", "green", "orange"];
 
 function hideTaskAdder() {
@@ -60,6 +68,8 @@ taskTextArea.addEventListener("keydown", function (event) {
   taskArray.push(taskObj);
   hideTaskAdder();
   taskTextArea.value = "";
+  // Update Local Storage
+  updateLocalStorage();
   createTaskAndAddToUI();
 });
 // Get the color from taskAdder
@@ -126,7 +136,8 @@ function createTaskAndAddToUI(ticketTaskArray = taskArray) {
       ticketPriorityColor.classList.add(nextColor);
       // Data Layer --
       taskObj.color = nextColor;
-      // console.log(currentColor);
+      // Update Local Storage
+      updateLocalStorage();
     });
     // delete functionality of ticket when delete flag is active
     ticketBox.addEventListener("dblclick", function () {
@@ -137,6 +148,8 @@ function createTaskAndAddToUI(ticketTaskArray = taskArray) {
       taskArray = taskArray.filter(function (obj) {
         return obj.id != id;
       });
+      // Update Local Storage
+      updateLocalStorage();
     });
     // Edit button functionality of ticker
     lockContainer.addEventListener("click", function () {
@@ -154,7 +167,13 @@ function createTaskAndAddToUI(ticketTaskArray = taskArray) {
       // DataLayer
       taskObj.task = ticketTaskTag.innerHTML;
       isTicketEditable = !isTicketEditable;
+      // Update Local Storage
+      updateLocalStorage();
     });
     taskContainer.appendChild(ticketBox);
   });
+}
+
+function updateLocalStorage() {
+  localStorage.setItem("TaskArray", JSON.stringify(taskArray));
 }
