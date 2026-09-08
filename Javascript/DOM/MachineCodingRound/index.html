@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .task {
+        border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="taskInputs">
+      <input type="text" />
+      <button class="add">Add</button>
+    </div>
+    <div class="taskContainer">
+      <div class="task">
+        <p>Task</p>
+        <button>Delete</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let taskInput = document.querySelector("input");
+    let addBtn = document.querySelector(".add");
+    let taskArray = [];
+
+    addBtn.addEventListener("click", function () {
+      let task = taskInput.value.trim();
+      if (task.length == 0) {
+        return;
+      }
+      let taskObj = {
+        task: task,
+        id: Date.now(),
+      };
+      taskArray.push(taskObj);
+      addTaskToUI();
+    });
+
+    function addTaskToUI() {
+      taskArray.forEach(function (taskObj) {
+        let { task, id } = taskObj;
+        let taskEle = document.createElement('div'); 
+        
+      });
+    }
+  </script>
+</html>
