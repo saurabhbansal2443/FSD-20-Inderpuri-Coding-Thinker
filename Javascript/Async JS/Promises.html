@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Promises -- Priomise has 3 states -- pending , fullfilled , reject
+
+    // let promise = new Promise(function (resolve, reject) {
+    //   setTimeout(function () {
+    //     if (false) {
+    //       resolve("Yes it is resolved");
+    //     } else {
+    //       reject("No it is rejected");
+    //     }
+    //   }, 2000);
+    // });
+    // console.log(promise);
+    // promise
+    //   .then(function (data) {
+    //     console.log("Resolve called");
+    //     console.log(data);
+    //   })
+    //   .catch(function (err) {
+    //     console.log("Reject called");
+    //     console.log(err);
+    //   });
+
+    // Cut the Bread
+
+    let raw = "Bread";
+
+    // function CutTheBread(bread) {.    //Easy Syntax
+    //   let breadPromise = new Promise(function (resolve, reject) {
+    //     setTimeout(function () {
+    //       if (bread) {
+    //         resolve("Bread Is cutted");
+    //       } else {
+    //         reject("Raw material is not here ");
+    //       }
+    //     }, 2000);
+    //   });
+
+    //   return breadPromise;
+    // }
+
+    function CutTheBread(bread) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          if (bread) {
+            resolve("Bread Is cutted");
+          } else {
+            reject("Raw material is not here ");
+          }
+        }, 2000);
+      });
+    }
+
+    //  let breadPrimise = CutTheBread(raw). // Easy Syntax
+    //  breadPrimise.then
+    console.log("Start");
+    CutTheBread(raw)
+      .then(function (data) {
+        console.log(data);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+    console.log("End");
+  </script>
+</html>
