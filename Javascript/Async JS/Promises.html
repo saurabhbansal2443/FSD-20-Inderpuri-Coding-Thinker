@@ -33,7 +33,7 @@
 
     let raw = "Bread";
 
-    // function CutTheBread(bread) {.    //Easy Syntax
+    // function CutTheBread(bread) {    //Easy Syntax
     //   let breadPromise = new Promise(function (resolve, reject) {
     //     setTimeout(function () {
     //       if (bread) {
@@ -47,28 +47,72 @@
     //   return breadPromise;
     // }
 
-    function CutTheBread(bread) {
+    function CutTheBread(raw) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          if (raw) {
+            resolve("Bread Is cutted");
+          } else {
+            reject("Cut the bread failed");
+          }
+        }, 2000);
+      });
+    }
+    function addStuffings(bread) {
       return new Promise(function (resolve, reject) {
         setTimeout(function () {
           if (bread) {
-            resolve("Bread Is cutted");
+            resolve("Bread is stuffed");
           } else {
-            reject("Raw material is not here ");
+            reject("Add stuffings failed");
           }
         }, 2000);
       });
     }
 
+    function bake(bread) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          if (bread) {
+            resolve("Sandwich is ready");
+          } else {
+            reject("Bake failed");
+          }
+        }, 2000);
+      });
+    }
     //  let breadPrimise = CutTheBread(raw). // Easy Syntax
     //  breadPrimise.then
+    // console.log(CutTheBread(raw));
+
+    // console.log("Start");
+    // CutTheBread()
+    //   .then(function (data) {
+    //     console.log(data);
+    //     return addStuffings(data);
+    //   })
+    //   .then(function (data) {
+    //     console.log(data);
+    //     return bake(data);
+    //   })
+    //   .then(function (data) {
+    //     console.log(data);
+    //   })
+    //   .catch(function (err) {
+    //     console.log(err);
+    //   });
+    // console.log("End");
+
+    async function resolveSandwich() {
+      let cuttedBread = await CutTheBread(raw);
+      console.log(cuttedBread);
+      let stuffedBread = await addStuffings();
+      console.log(stuffedBread);
+      let sandwich = await bake(stuffedBread);
+      console.log(sandwich);
+    }
     console.log("Start");
-    CutTheBread(raw)
-      .then(function (data) {
-        console.log(data);
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
+    resolveSandwich();
     console.log("End");
   </script>
 </html>
