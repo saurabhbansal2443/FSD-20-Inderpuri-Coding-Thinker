@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Weather App</title>
-
     <style>
       * {
         margin: 0;
@@ -229,10 +227,8 @@
       }
     </style>
   </head>
-
   <body>
     <div class="weather-app">
-      <!-- Header -->
       <header class="header">
         <div class="logo">☁ WeatherNow</div>
 
@@ -243,7 +239,6 @@
         </div>
       </header>
 
-      <!-- Main Weather -->
       <section class="main-weather">
         <div class="weather-info">
           <div class="location">📍 Surat, India</div>
@@ -262,7 +257,6 @@
         />
       </section>
 
-      <!-- Weather Details -->
       <section class="details">
         <div class="detail-card">
           <div class="detail-icon">💧</div>
@@ -290,7 +284,11 @@
       </section>
     </div>
   </body>
- <script>
+  <script>
     
- </script>
+
+    function getApi(city) {
+      return `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}`;
+    }
+  </script>
 </html>
