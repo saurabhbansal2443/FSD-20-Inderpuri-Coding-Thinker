@@ -285,10 +285,26 @@
     </div>
   </body>
   <script>
-    
+    let apiKey = "ed8c37818a944c29adf40311232510";
+    const cityInput = document.getElementById("cityInput");
+    const searchBtn = document.getElementById("searchBtn");
+
+    searchBtn.addEventListener("click", function () {
+      let city = cityInput.value;
+      cityInput.value = "";
+      getData(city);
+    });
+    // JSON.parse() -- .json
+    async function getData(city) {
+      let api = getApi(city);
+      let apiData = await fetch(api);
+      let data = await apiData.json();
+      console.log(data);
+      updateUI(data);
+    }
 
     function getApi(city) {
-      return `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}`;
+      return `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
     }
   </script>
 </html>
