@@ -7,6 +7,7 @@
   </head>
   <body></body>
   <script>
+    // Promise is way to handle async task , it is a object which has mainly two function then and catch
     // Promises -- Priomise has 3 states -- pending , fullfilled , reject
 
     // let promise = new Promise(function (resolve, reject) {
@@ -85,23 +86,26 @@
     //  breadPrimise.then
     // console.log(CutTheBread(raw));
 
-    // console.log("Start");
-    // CutTheBread()
-    //   .then(function (data) {
-    //     console.log(data);
-    //     return addStuffings(data);
-    //   })
-    //   .then(function (data) {
-    //     console.log(data);
-    //     return bake(data);
-    //   })
-    //   .then(function (data) {
-    //     console.log(data);
-    //   })
-    //   .catch(function (err) {
-    //     console.log(err);
-    //   });
-    // console.log("End");
+    console.log("Start");
+    CutTheBread()
+      .then(function (data) {
+        console.log(data);
+        return addStuffings(data);
+      })
+      .then(function (data) {
+        console.log(data);
+        return bake(data);
+      })
+      .then(function (data) {
+        console.log(data);
+      })
+      .catch(function (err) {
+        console.log(err);
+      })
+      .finally(function () {
+        console.log("Finally called");
+      });
+    console.log("End");
 
     async function resolveSandwich() {
       let cuttedBread = await CutTheBread(raw);
